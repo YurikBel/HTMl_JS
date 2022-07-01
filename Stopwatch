@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stopwatch</title>
+    <script>
+        let a = 0;
+        let click = 0;
+        function counter(){
+            document.getElementById('p1').innerText = a;
+            a++;
+        }
+
+        function stopwatch(){
+            if (click % 2 == 0){
+                t = setInterval(counter, 1000);
+                document.getElementById('b1').innerText = 'Стоп'
+            } else{
+               clearInterval(t);
+               document.getElementById('b1').innerText = 'Старт'
+            }
+            click++
+
+        }
+
+    </script>
+</head>
+<body>
+    <h3>Секундомер</h3>
+    <p1 id="p1"></p1><br>
+    <button id='b1' type="button" onclick="stopwatch()">Старт</button>
+</body>
+</html>
